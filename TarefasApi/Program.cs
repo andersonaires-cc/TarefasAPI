@@ -1,6 +1,12 @@
+using TarefasApi.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+builder.AddPersistence();
+
+var app = builder.Build();
+
+//app.MapTarefasEndpoints();
 
 app.Run();
